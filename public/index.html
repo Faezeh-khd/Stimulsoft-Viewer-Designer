@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Stimulsoft - Viewer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- CSS skins -->
+  <link rel="stylesheet" href="/stimulsoft/css/stimulsoft.viewer.office2013.whiteteal.css" />
+  <link rel="stylesheet" href="/stimulsoft/css/stimulsoft.designer.office2013.whiteteal.css" />
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <!-- Load Stimulsoft core scripts first -->
+  <script src="/stimulsoft/scripts/stimulsoft.reports.js"></script>
+  <script src="/stimulsoft/scripts/stimulsoft.viewer.js"></script>
+  <script src="/stimulsoft/scripts/stimulsoft.designer.js"></script>
+
+  <!-- Now apply license -->
+  <script>
+    if (window.Stimulsoft && window.Stimulsoft.Base && window.Stimulsoft.Base.StiLicense) {
+      window.Stimulsoft.Base.StiLicense.loadFromFile('/stimulsoft/license/license.key');
+      
+    }
+
+    if (window.Stimulsoft && window.Stimulsoft.Base) {
+      // Option A: Use license key directly
+      window.Stimulsoft.Base.StiLicense.key =
+        ".....";
+    
+      // Option B: Load license from file
+      window.Stimulsoft.Base.StiLicense.loadFromFile('/stimulsoft/license/license.key');
+    } else {
+      console.error("Stimulsoft scripts not loaded correctly");
+    }
+  </script>
+
+  <!-- Vue bundle will be injected here -->
+</body>
+
+</html>
